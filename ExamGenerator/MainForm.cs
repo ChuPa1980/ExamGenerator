@@ -10,11 +10,18 @@ using System.Windows.Forms;
 
 namespace ExamGenerator
 {
-    public partial class Form1 : Form
+    public partial class MainForm : Form
     {
-        public Form1()
+        public MainForm()
         {
             InitializeComponent();
+
+        }
+
+        private void btnMathExam_Click(object sender, EventArgs e)
+        {
+            var mathForm = new MathForm();
+            mathForm.Show();
         }
     }
 }
