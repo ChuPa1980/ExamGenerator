@@ -19,6 +19,14 @@ namespace ExamGenerator.Generator
         {
             StringBuilder sb = new StringBuilder();
             sb.AppendLine(Name);
+            
+            sb.AppendLine(this.ToQuestionsString());
+            return sb.ToString();
+        }
+
+        public string ToQuestionsString()
+        {
+            StringBuilder sb = new StringBuilder();
             foreach (var q in Questions)
             {
                 sb.AppendLine(q.GetText());

@@ -1,4 +1,5 @@
-﻿using ExamGenerator.Generator;
+﻿using ExamGenerator.Export.MSWord;
+using ExamGenerator.Generator;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -23,6 +24,12 @@ namespace ExamGenerator
         private void ResultForm_Load(object sender, EventArgs e)
         {
             this.rtbResult.Text = exam?.ToString();
+        }
+
+        private void btnExportWord_Click(object sender, EventArgs e)
+        {
+            Clipboard.SetText(exam?.ToQuestionsString());
+            ExportToMSWord.CreateFromClipboard();
         }
     }
 }

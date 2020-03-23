@@ -12,17 +12,17 @@ namespace ExamGenerator.Generator.Mathematics
         {
             Exam mathExam = new Exam();
             mathExam.Name = settings.GetExamName();
-            mathExam.Questions = this.CreateQuestions(settings.GetNumOfQuestions());
+            mathExam.Questions = this.CreateQuestions(settings.GetNumOfQuestions(), settings.GetMaxOperand());
 
             return mathExam;
         }
 
-        private IList<IQuestion> CreateQuestions(int number)
+        private IList<IQuestion> CreateQuestions(int number, int max)
         {
             IList<IQuestion> questions = new List<IQuestion>();
             for (int i = 0; i < number; i++)
             {
-                questions.Add(MathQuestionFactory.Create());
+                questions.Add(MathQuestionFactory.Create(max));
             }
 
             return questions;

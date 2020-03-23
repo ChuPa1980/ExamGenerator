@@ -9,6 +9,7 @@ namespace ExamGenerator.Generator.Mathematics
     public class MathExamSettings : IExamSettings
     {
         internal int numOfQuestions;
+        internal int maxOperand; // Max operand
         internal string examName;
 
         public string GetExamName()
@@ -21,6 +22,9 @@ namespace ExamGenerator.Generator.Mathematics
             return this.numOfQuestions;
         }
 
-
+        public int GetMaxOperand()
+        {
+            return this.maxOperand;
+        }
     }
 }

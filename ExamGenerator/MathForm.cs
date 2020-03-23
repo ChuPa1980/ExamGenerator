@@ -25,6 +25,7 @@ namespace ExamGenerator
             MathExamSettings settings = new MathExamSettings();
             settings.examName = "Test Exam";
             settings.numOfQuestions = (int)this.numQuestion.Value;
+            settings.maxOperand = (int)this.numMaxOperand.Value;
             var exam = g.Generate(settings);
             resultForm.exam = exam;
             resultForm.Show();

@@ -9,6 +9,9 @@ namespace ExamGenerator.Generator
     public interface IExamSettings
     {
         int GetNumOfQuestions();
+
+        int GetMaxOperand();
+
         string GetExamName();
     }
 }
